@@ -1,0 +1,161 @@
+<!-- <div class="h2"> -->
+    <h2 (click)="disp('id')">:id [Route parameter] </h2>
+    <!-- <div class="lc">    
+        <p class="m"  (click)="changeId(false)">-</p>
+        <p class="p" (click)="changeId(true)">+</p>
+    </div> -->
+<!-- </div> -->
+<!-- <div class="b" [ngClass]="{'disp': id}">
+    <app-carousel [images]="images" ></app-carousel>
+</div> -->
+<div class="b generalCont" [ngClass]="{'disp': id, 'op': !id}">
+    <div class="pCont">
+        <p>ID Value: {{ id }}</p>
+        <app-carousel [images]="images"></app-carousel>
+        <img src="/assets/img/ang/routing/001.png" alt="">
+        <p>
+            the value for this id parameter is required!<br>
+            If we dont pass the value for this id parameter, we will get an  error
+        </p>
+    </div>
+    
+    <div class="hide" (click)="disp('id')">.</div>
+</div>
+
+
+<!-- <div class="h2"> -->
+    <h2 (click)="disp('queryParam')">Passing Query Parameters to Route </h2>
+    <!-- <div class="lc">    
+        <p class="m" (click)="changeQuer(false)">-</p>
+        <p class="p" (click)="changeQuer(true)">+</p>
+    </div> -->
+<!-- </div> -->
+<div class="queryParam generalCont" [ngClass]="{'disp': queryParametres, 'op': !queryParametres}" >
+    <div class="pCont">
+        <h3 (click)="disp('send')">How to pass query param to the route</h3>
+        <div class="h3cont" [ngClass]="{'disp': send, 'op': !send}">
+            <div class="h3cont__body">
+                <p>
+                    query parameters are the optional (необязательный) parameters that we pass to a route
+                    and these query parameters are added at the end of the url separated by a
+                    question mark <span style="color: brown;">"?"</span>
+                </p>
+                <h4>The different between query parameters and router parameters</h4>
+                <ul>
+                    <li>
+                            O- query parameters are the optional (необязательный) parameters, if 
+                        the querry parameter is missing in the url it will not stop angular from
+                        navigathing to the route 
+                    </li>
+                    <li>
+                            O- query parameters are not part of the route defination
+                    </li>
+                </ul>
+                <p>
+                    How pass query parameters to route 
+                </p>
+                <app-carousel [images]="images2"></app-carousel>
+                <p>Amnd when we clicking in edit button in href are appear this query parameters</p>
+                <p class="beforeAndAfter">before</p>
+                <img src="/assets/img/ang/routing/1-4.png" alt="">
+                <p class="beforeAndAfter">after</p>
+                <img src="/assets/img/ang/routing/1-5.png" alt="">
+                <hr>
+                <p>pass a query parameter to a route programmaticly</p>
+                <p>at first adding this code in courses.component.html</p>
+                <img src="/assets/img/ang/routing/1-6.png" alt="">
+                <p>and adding this to ts file</p>
+                <img src="/assets/img/ang/routing/1-7.png" alt="">
+                <p>and import all from...</p>
+                <img src="/assets/img/ang/routing/1-8.png" alt="">
+                <p>and in ts file create this function</p>
+                <img src="/assets/img/ang/routing/1-9.png" alt="">
+            </div>
+            <div class="h3cont__hide" (click)="disp('send')"></div>        
+        </div>
+        <h3 (click)="disp('get')">How to retrieve[забрать] the value of query parameter</h3>
+        <div class="h3cont" [ngClass]="{'disp': get, 'op': !get}">
+            <div class="h3cont__body">
+                <p>using snapshot method</p>
+                <app-carousel [images]="images3"></app-carousel>
+                <p>
+                    but when we clicking edit button and adding query param it's bot console, the 
+                    reason  is because we logging it only n ngOnInit when the component initailazes
+                </p>
+                <p>
+                    For that we are using  observable
+                </p>
+                <p> 
+                    this.activatedRoute.queryParamMap
+                </p>
+                <p>
+                    this queryParamMap method is return an observable, and to this observable we 
+                    can subscribe using subscribe method, <br>
+                    and this call back function  will get executed  whenever this observable 
+                    will returns a bnew value
+                </p>
+                <img src="/assets/img/ang/routing/1-12.png" alt="">
+            </div>
+            <div class="h3cont__hide" (click)="disp('get')"></div>
+        </div>
+
+    </div>
+    <div class="hide" (click)="disp('queryParametres')">.</div>
+    
+</div>
+<h2 (click)="disp('fragments')">Passing Fragments to Route </h2>
+<div class="queryParam generalCont" [ngClass]="{'disp': fragments, 'op': !fragments}" >
+    <div class="pCont">
+        <h3 (click)="disp('sendFrag')">hoq to Pass Fragments to Route</h3>
+        <div class="h3cont" [ngClass]="{'disp': sendFrag, 'op': !sendFrag}">
+            <div class="h3cont__body">
+                A fragment in URL is a link which jumps to a section or a content in HTML page
+                which contains th ID mentioned in a fragment. A fragment comes after # sign
+                <p>
+                    localhost:4200/Products#service
+                </p>
+                <p>
+                    this url will take us to the service section of that html page
+                </p>
+                <p>
+                    For all this we need to have app.component.html
+                </p>
+                <img src="/assets/img/ang/routing/1-13.png" alt="">
+                <p>the view oh website</p>
+                <video src="/assets/img/ang/routing/001.mp4" controls width="80%"></video>
+                <div>
+                    app-home idHomeapp-home <br>
+                    app-about idAboutapp-about <br>
+                    app-contact id=Contactapp-contact <br>
+                    app-course id=Courseapp-course <br>
+                </div>
+                <img src="/assets/img/ang/routing/1-15.png" alt=""><br>
+                <p>before clicking in a tag</p>
+                <img src="/assets/img/ang/routing/1-16.png" alt=""><br>
+                <p>after clicking in a tag</p>
+                <img src="/assets/img/ang/routing/1-17.png" alt=""><br>
+            </div>
+            <div class="h3cont__hide" (click)="disp('sendFrag')"></div>
+        </div>
+        <h3 (click)="disp('retrieveFrag')">hoq to retrieve Fragments to Route</h3>
+        <div class="h3cont" [ngClass]="{'disp': retrieveFrag, 'op': !retrieveFrag}">
+            <div class="h3cont__body">
+                <img src="/assets/img/ang/routing/1-18.png" alt=""><br>
+                <p>And everytime when we clicking in the on of that links, in console
+                    we have log the link fragmen in which we have clicked
+                </p>
+                <video src="/assets/img/ang/routing/222.mp4" controls width="80%"></video>
+                <p>let's create a method and call it jumpTo</p>
+                <p>to this jumpTo methos we will pass a section</p>
+                <img src="/assets/img/ang/routing/1-19.png" alt=""><br>
+                <img src="/assets/img/ang/routing/1-20.png" alt=""><br>
+                <p>And the result</p>
+                <video src="/assets/img/ang/routing/334.mp4" controls width="80%"></video>
+            </div>
+            <div class="h3cont__hide" (click)="disp('retrieveFrag')"></div>
+        </div>
+        
+    </div>
+
+    <div class="hide" (click)="disp('fragments')">.</div>
+</div>

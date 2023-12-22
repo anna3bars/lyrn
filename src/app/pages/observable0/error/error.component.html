@@ -1,0 +1,34 @@
+<h2>2.Error & Completion of Observable | Observables</h2>
+<img src="/assets/img/ang/observable/05.png" width="80%" alt=""><br>
+<p>
+    and when this error will be emited, after that we have these two values (4, 5),
+    these two values will not get emmited by observable
+</p>
+<p style="color: white; background-color: #a8ab1d; width: 65%; padding: 5px; border-radius: 5px;">
+    whenever an observable emits an error after that if we have any 
+    valu to be emmited those values will not get emmited!
+</p>
+<img src="/assets/img/ang/observable/06.png" width="100%" alt=""><br>
+<img src="/assets/img/ang/observable/07.png"  alt=""><br>
+<p>
+    we're using second callback function to handle the error
+</p>
+<p>
+    when the observable is done emmiting all the data it can also emit 
+    a complete signal <br>
+    for this we use the complete metrhod, and this complete methode
+    does not take any argument
+</p>
+<img src="/assets/img/ang/observable/08.png"  alt=""><br>
+<p>
+    Let's say that we want to execute(կատարել, ձեվակերպել) some logic, for that
+    we can specify a third callback function for this subscribe method. <br>
+    and this callback function does not receive any argument and inside this 
+    callback function we can write any logic which we want to execute after the 
+    observable has returned a complete signal
+</p>
+<img src="/assets/img/ang/observable/09.png"  alt=""><br>
+<p>
+    Once the complete signal is emmited from thev observable, after that if we
+    have any data to be emmited that will not get emmited
+</p>

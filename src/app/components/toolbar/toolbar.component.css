@@ -1,0 +1,17 @@
+.toolbar, .toolbar a {
+    background-color: #607d8b;
+    font-weight: 500;
+    font-size: 21px;
+}
+.toolbar {
+    padding: 16px 15px;
+    padding: 16px 15px;
+    position: fixed;
+    z-index: 150000;
+    width: 100%;
+    display: flex;
+}
+.toolbar a {
+    display: block;
+    margin-right: 17px;
+}

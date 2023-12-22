@@ -1,0 +1,23 @@
+
+<h2>Different ways of Creating Observable</h2>
+<p>By using cretae method</p>
+<img src="/assets/img/ang/observable/10.png"  alt=""><br>
+<p style="color: white; background-color: teal; padding: 5px;border-radius: 5px;">
+    Behind the scenes this create method uses the observable constructor. So when we creating
+    observable using create method it is similiar to creating observable using the observable 
+    constructor.
+</p>
+<p>using of operator</p>
+<img src="/assets/img/ang/observable/12.png"  alt=""><br>
+<img src="../../../assets/img/ang/observable/11.png"  alt=""><br>
+<p>
+    but it also have emitted a complete signal
+</p>
+<img src="/assets/img/ang/observable/13.png"  alt=""><br>
+<p style="color: #a8ab1d;">By using from opertator</p>
+<p>First we need to import it from rxjs <br>
+    import  Observable, of, from  from 'rxjs';
+</p>
+<p>myObservable = from(this.array1)</p>
+<img src="/assets/img/ang/observable/14.png"  alt=""><br>
+<p>To this from method we also can pas a promise</p>

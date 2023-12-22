@@ -1,0 +1,8 @@
+.disp {
+    display: flex;
+    transition: 2s ease;
+}
+.op {
+   display: none;
+}
+

@@ -1,0 +1,55 @@
+<h2>RXJS</h2>
+<img src="/assets/img/ang/observable/rxjs.png" alt="" width="750px">
+<p>
+    a promise is native to javascript it is provided by javascript language
+    but observable is not a native feature of angular or javascript
+    it is provided by another javascript library which is called as rxjs
+</p>
+<p>
+    all right so we can say that an
+    observable is a function that converts ordinary stream of data into an
+    observable stream of data you can think of observable as a wrapper
+    around the ordinary stream of data in simple words an observable streams
+    the data it sends the data in packets or you can say it sends the data in chunks
+    it does not send all the data at once it streams the data all right now i mentioned that
+    observable is not native to angular or javascript it is provided by another
+    javascript library which is rxjs so the rxjs is a javascript library that
+    allows us to work with asynchronous data stream and rxjs is a short form for reactive
+    extension library for javascript now if you want to learn more about rxjs
+    you can visit this reactive x dot io web page here you will find everything related to
+    reactive programming in javascript alright
+</p>
+<h4>The difference between Promise and Observable</h4>
+<p>
+    so let's say we are creating an
+    application which needs some data from
+    the server
+    so let's say we are requesting a list of
+    users from the server
+    in that case from our application we
+    will send a request to the server
+    now the server will get this data either
+    from the database or from the web api
+    now let's say the data which we are
+    requesting is huge
+    in that case the server will take some
+    time to gather that data okay so let's
+    say we have one million user in our
+    database so in order to get that one
+    million user the server will take some
+    time to gather all the data
+    and once the data is available it will create a response and
+    it will send that data with the response
+    to the client
+    so here the server gathered all the data
+    and once the data is ready it sent all
+    that data at once to the client
+    and this is how a promise works
+    a promise promises us some data and it
+    provides us the data over a period of
+    time
+    and a promise provides us the data once
+    the complete data is ready
+</p><br>
+<img src="/assets/img/ang/observable/01.png" width="450px" alt=""><br>
+<video src="/assets/img/ang/observable/video/01.mp4" controls width="75%"></video>

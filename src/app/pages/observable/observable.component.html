@@ -1,0 +1,182 @@
+<h2 id="first">1.What is Observable | Observables</h2>
+<p>
+    we use observables to perform asynchronous
+    operation and handle asynchronous data
+    another way of performing asynchronous
+    operation in javascript and handling
+    asynchronous data is by using promises so
+    we can handle asynchronous operation in
+    angular using either promises or observables 
+</p><br>
+<p>
+    now what is asynchronous operation and asynchronous data
+    well we already know that javascript is a single threaded programming language
+    that means the code is executed line by line and once the execution of one code
+    is complete then only the next code in the program will be executed right
+    so if a task takes long time in its execution for example let's say we are
+    making an http request to the server in that case it is going to take some
+    time right so the next statement after that http request will have to wait for its
+    execution it will only get executed when the http request completes<br>
+    so we can say that the synchronous code is blocking in nature
+    and this is where asynchronous programming comes into picture
+    an asynchronous code executes in the background without blocking the execution of the code in the main thread
+    okay so an asynchronous code is non-blocking that means we can make http request
+    asynchronously in that case it will run in the background and the next code
+    after that http request will be executed immediately in the main thread
+    so in this case the http request will not block the execution of next line of
+    code ok so using asynchronous program we can
+    perform long network requests without blocking the main thread
+</p><br>
+<h2>RXJS</h2>
+<img src="../../../assets/img/ang/observable/rxjs.png" alt="" width="750px">
+<p>
+    a promise is native to javascript it is provided by javascript language
+    but observable is not a native feature of angular or javascript
+    it is provided by another javascript library which is called as rxjs
+</p>
+<p>
+    all right so we can say that an
+    observable is a function that converts ordinary stream of data into an
+    observable stream of data you can think of observable as a wrapper
+    around the ordinary stream of data in simple words an observable streams
+    the data it sends the data in packets or you can say it sends the data in chunks
+    it does not send all the data at once it streams the data all right now i mentioned that
+    observable is not native to angular or javascript it is provided by another
+    javascript library which is rxjs so the rxjs is a javascript library that
+    allows us to work with asynchronous data stream and rxjs is a short form for reactive
+    extension library for javascript now if you want to learn more about rxjs
+    you can visit this reactive x dot io web page here you will find everything related to
+    reactive programming in javascript alright
+</p>
+<h4>The difference between Promise and Observable</h4>
+<p>
+    so let's say we are creating an
+    application which needs some data from
+    the server
+    so let's say we are requesting a list of
+    users from the server
+    in that case from our application we
+    will send a request to the server
+    now the server will get this data either
+    from the database or from the web api
+    now let's say the data which we are
+    requesting is huge
+    in that case the server will take some
+    time to gather that data okay so let's
+    say we have one million user in our
+    database so in order to get that one
+    million user the server will take some
+    time to gather all the data
+    and once the data is available it will create a response and
+    it will send that data with the response
+    to the client
+    so here the server gathered all the data
+    and once the data is ready it sent all
+    that data at once to the client
+    and this is how a promise works
+    a promise promises us some data and it
+    provides us the data over a period of
+    time
+    and a promise provides us the data once
+    the complete data is ready
+</p><br>
+<img src="../../../assets/img/ang/observable/01.png" width="450px" alt=""><br>
+<video src="../../../assets/img/ang/observable/video/01.mp4" controls width="75%"></video>
+<h4>How to create a observable</h4>
+<img src="../../../assets/img/ang/observable/02.png" alt=""><br>
+<img src="../../../assets/img/ang/observable/04.png" alt="">
+<p>
+    observer and this argument will be injected by rxjs library<br>
+    and this observer is nothing but the subscriber, which is waiting for data <br>
+    <span style="color: teal; background-color: whitesmoke;">observable.next('')</span> is
+    for emit (արձակել)tha data
+</p>
+<video src="../../../assets/img/ang/observable/video/02.mp4" controls width="75%"></video>
+<p>
+    this subscribe method takes three optional parameters
+    and these parameters are callback functions
+    so the first callback function is next the second callback function is error
+    and the third callback function is complete and all these three parameters
+    are optional okay and all these three are callback functions
+</p>
+<hr>
+<h2>2.Error & Completion of Observable | Observables</h2>
+<img src="../../../assets/img/ang/observable/05.png" width="80%" alt=""><br>
+<p>
+    and when this error will be emited, after that we have these two values (4, 5),
+    these two values will not get emmited by observable
+</p>
+<p style="color: white; background-color: #a8ab1d; width: 65%; padding: 5px; border-radius: 5px;">
+    whenever an observable emits an error after that if we have any 
+    valu to be emmited those values will not get emmited!
+</p>
+<img src="../../../assets/img/ang/observable/06.png" width="100%" alt=""><br>
+<img src="../../../assets/img/ang/observable/07.png"  alt=""><br>
+<p>
+    we're using second callback function to handle the error
+</p>
+<p>
+    when the observable is done emmiting all the data it can also emit 
+    a complete signal <br>
+    for this we use the complete metrhod, and this complete methode
+    does not take any argument
+</p>
+<img src="../../../assets/img/ang/observable/08.png"  alt=""><br>
+<p>
+    Let's say that we want to execute(կատարել, ձեվակերպել) some logic, for that
+    we can specify a third callback function for this subscribe method. <br>
+    and this callback function does not receive any argument and inside this 
+    callback function we can write any logic which we want to execute after the 
+    observable has returned a complete signal
+</p>
+<img src="../../../assets/img/ang/observable/09.png"  alt=""><br>
+<p>
+    Once the complete signal is emmited from thev observable, after that if we
+    have any data to be emmited that will not get emmited
+</p>
+<h2>Different ways of Creating Observable</h2>
+<p>By using cretae method</p>
+<img src="../../../assets/img/ang/observable/10.png"  alt=""><br>
+<p style="color: white; background-color: teal; padding: 5px;border-radius: 5px;">
+    Behind the scenes this create method uses the observable constructor. So when we creating
+    observable using create method it is similiar to creating observable using the observable 
+    constructor.
+</p>
+<p>using of operator</p>
+<img src="../../../assets/img/ang/observable/12.png"  alt=""><br>
+<img src="../../../assets/img/ang/observable/11.png"  alt=""><br>
+<p>
+    but it also have emitted a complete signal
+</p>
+<img src="../../../assets/img/ang/observable/13.png"  alt=""><br>
+<p style="color: #a8ab1d;">By using from opertator</p>
+<p>First we need to import it from rxjs <br>
+    import  Observable, of, from  from 'rxjs';
+</p>
+<p>myObservable = from(this.array1)</p>
+<img src="../../../assets/img/ang/observable/14.png"  alt=""><br>
+<p>To this from method we also can pas a promise</p>
+<h2>Understanding Operators of RxJS </h2>
+<p>
+    Operators in rxjs are simply functions that takes an observable as an
+    input and transform it into a new observable and then it returns it
+    we use operators to manipulate the observable data stream
+</p>
+<p>import  map  from 'rxjs/operators'</p>
+<img src="../../../assets/img/ang/observable/15.png"  alt=""><br>
+<p>result</p>
+<img src="../../../assets/img/ang/observable/16.png"  alt=""><br>
+<p>We also can use like this</p>
+<img src="../../../assets/img/ang/observable/17.png"  alt=""><br>
+<p>and the result is</p>
+<img src="../../../assets/img/ang/observable/18.png"  alt=""><br>
+<p>That's mean that at first is activing map method and return a new observable and after it 
+    for this new observable we use a filter method
+</p>
+<h2>Unsubscribe to an Observable</h2>
+<video src="../../../assets/img/ang/observable/video/03.mp4" controls width="75%"></video>
+
+
+
+
+

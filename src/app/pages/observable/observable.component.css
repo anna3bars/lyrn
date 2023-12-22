@@ -1,0 +1,31 @@
+h4 {
+    width: fit-content;
+    padding: 3px 5px;
+    background-color: rgba(68, 166, 68, 0.76);
+    border-radius: 5px;
+    margin: 9px 0;
+}
+h2 {
+    padding: 3px 5px;
+    background-color: #ff8100;
+    border-radius: 5px;
+    margin: 9px 0;
+}
+p {
+    margin: 11px 0 5px 0;
+    width: 85%;
+}
+img {
+    display: block;
+    margin-bottom: 5px;
+}
+.posBt {
+    position: fixed;
+    bottom: 0;
+    background-color: brown;
+}
+
+
+
+
+
